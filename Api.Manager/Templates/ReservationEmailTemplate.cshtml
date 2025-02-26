@@ -1,0 +1,130 @@
+@using Api.Manager.Domain.Entity
+@model BookingEntity
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking confirmation - @Model.InfoHotel.Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        .info {
+            margin-bottom: 20px;
+        }
+
+            .info h2 {
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 5px;
+                margin-bottom: 10px;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+            ul li {
+                margin-bottom: 5px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Booking confirmation</h1>
+        <p>Dear Customer,</p>
+        <p>Thank you for choosing <strong>@Model.InfoHotel.Name</strong>. Your booking has been successfully confirmed. Below are your booking details:</p>
+
+        <div class="info">
+            <h2>Booking Details</h2>
+            <p><strong>Booking number:</strong> @Model.Id</p>
+            <p><strong>Check-In date:</strong> @Model.CheckInDate</p>
+            <p><strong>Check-Out date:</strong> @Model.CheckOutDate</p>
+            <p><strong>Number of guests:</strong> @Model.NumberOfGuests</p>
+        </div>
+
+        <div class="info">
+            <h2>Hotel Information</h2>
+            <p><strong>Name:</strong> @Model.InfoHotel.Name</p>
+            <p><strong>Address:</strong> @Model.InfoHotel.Address, @Model.InfoHotel.City, @Model.InfoHotel.State, @Model.InfoHotel.Country</p>
+            <p><strong>Phone:</strong> @Model.InfoHotel.Phone</p>
+            <p><strong>Email:</strong> @Model.InfoHotel.Email</p>
+        </div>
+
+        <div class="info">
+            <h2>Room details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Type</th>
+                        <th>Base Cost</th>
+                        <th>Taxes</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var room in Model.InfoRooms)
+                    {
+                        <tr>
+                            <td>@room.Number</td>
+                            <td>@room.TypeRoom.Name</td>
+                            <td>@room.BaseCost</td>
+                            <td>@room.Taxes</td>
+                            <td>@room.Location</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info">
+            <h2>Guest information</h2>
+            <ul>
+                @foreach (var guest in Model.InfoGuests)
+                {
+                    <li>@guest.FirstName @guest.LastName - @guest.Email - @guest.ContactPhone</li>
+                }
+            </ul>
+        </div>
+
+        <div class="info">
+            <h2>Emergency contact</h2>
+            <p><strong>Name:</strong> @Model.InfoEmergencyContact.FirstName @Model.InfoEmergencyContact.LastName</p>
+            <p><strong>Phone:</strong> @Model.InfoEmergencyContact.ContactPhone</p>
+        </div>
+
+        <p>We hope you enjoy your stay. For any additional inquiries, please do not hesitate to contact us.</p>
+        <p>Sincerely,<br>the team at @Model.InfoHotel.Name</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,2897 @@
+{
+	"info": {
+		"_postman_id": "b436d16d-4387-4111-b49e-67ad80f6d780",
+		"name": "Booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26919248"
+	},
+	"item": [
+		{
+			"name": "AuthLogin",
+			"item": [
+				{
+					"name": "LoginQuery",
+					"item": [
+						{
+							"name": "Processes a login request using the provided login query.",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/AuthLogin/LoginQuery?UserName=k.suarez&Password=test",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"AuthLogin",
+										"LoginQuery"
+									],
+									"query": [
+										{
+											"key": "UserName",
+											"value": "k.suarez"
+										},
+										{
+											"key": "Password",
+											"value": "test"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "https://localhost:7281/AuthLogin/LoginQuery?UserName=<string>&Password=<string>",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "7281",
+											"path": [
+												"AuthLogin",
+												"LoginQuery"
+											],
+											"query": [
+												{
+													"key": "UserName",
+													"value": "<string>"
+												},
+												{
+													"key": "Password",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"result\": \"<boolean>\",\n  \"token\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/AuthLogin/LoginQuery?UserName=<string>&Password=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"AuthLogin",
+												"LoginQuery"
+											],
+											"query": [
+												{
+													"key": "UserName",
+													"value": "<string>"
+												},
+												{
+													"key": "Password",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GetAllRoleUserQuery",
+					"item": [
+						{
+							"name": "Retrieves all user roles.\r\nThis endpoint is secured and requires admin privileges.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/AuthLogin/GetAllRoleUserQuery",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"AuthLogin",
+										"GetAllRoleUserQuery"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "https://localhost:7281/AuthLogin/GetAllRoleUserQuery",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "7281",
+											"path": [
+												"AuthLogin",
+												"GetAllRoleUserQuery"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/AuthLogin/GetAllRoleUserQuery",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"AuthLogin",
+												"GetAllRoleUserQuery"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "AddRoleToUserCommand",
+					"item": [
+						{
+							"name": "Adds a role to a user.\r\nThis endpoint is secured and requires admin privileges.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userId\": \"<integer>\",\n  \"roleId\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/AuthLogin/AddRoleToUserCommand",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"AuthLogin",
+										"AddRoleToUserCommand"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userId\": \"<integer>\",\n  \"roleId\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://localhost:7281/AuthLogin/AddRoleToUserCommand",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "7281",
+											"path": [
+												"AuthLogin",
+												"AddRoleToUserCommand"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\",\n  \"result\": \"<boolean>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userId\": \"<integer>\",\n  \"roleId\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/AuthLogin/AddRoleToUserCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"AuthLogin",
+												"AddRoleToUserCommand"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "UpdateRoleToUserCommand",
+					"item": [
+						{
+							"name": "Updates an existing role for a user.\r\nThis endpoint is secured and requires admin privileges.",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userId\": \"<integer>\",\n  \"roleId\": \"<integer>\",\n  \"state\": \"<boolean>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/AuthLogin/UpdateRoleToUserCommand",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"AuthLogin",
+										"UpdateRoleToUserCommand"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userId\": \"<integer>\",\n  \"roleId\": \"<integer>\",\n  \"state\": \"<boolean>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://localhost:7281/AuthLogin/UpdateRoleToUserCommand",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "7281",
+											"path": [
+												"AuthLogin",
+												"UpdateRoleToUserCommand"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\",\n  \"result\": \"<boolean>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userId\": \"<integer>\",\n  \"roleId\": \"<integer>\",\n  \"state\": \"<boolean>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/AuthLogin/UpdateRoleToUserCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"AuthLogin",
+												"UpdateRoleToUserCommand"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "CreateUserCommand",
+					"item": [
+						{
+							"name": "Creates a new user.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/AuthLogin/CreateUserCommand",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"AuthLogin",
+										"CreateUserCommand"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://localhost:7281/AuthLogin/CreateUserCommand",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "7281",
+											"path": [
+												"AuthLogin",
+												"CreateUserCommand"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\",\n  \"result\": \"<boolean>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/AuthLogin/CreateUserCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"AuthLogin",
+												"CreateUserCommand"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "GetAllBookingsQuery",
+					"item": [
+						{
+							"name": "Retrieves all booking records.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Booking/GetAllBookingsQuery",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Booking",
+										"GetAllBookingsQuery"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Booking/GetAllBookingsQuery",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Booking",
+												"GetAllBookingsQuery"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"checkInDate\": \"<dateTime>\",\n      \"checkOutDate\": \"<dateTime>\",\n      \"numberOfGuests\": \"<integer>\",\n      \"isActive\": \"<boolean>\",\n      \"infoHotel\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"address\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"country\": \"<string>\",\n        \"phone\": \"<string>\",\n        \"email\": \"<string>\",\n        \"isActive\": \"<boolean>\"\n      },\n      \"infoRoom\": [\n        {\n          \"id\": \"<integer>\",\n          \"hotelId\": \"<integer>\",\n          \"number\": \"<string>\",\n          \"typeRoom\": {\n            \"id\": \"<integer>\",\n            \"name\": \"<string>\",\n            \"numberOfGuests\": \"<integer>\"\n          },\n          \"baseCost\": \"<double>\",\n          \"taxes\": \"<double>\",\n          \"location\": \"<string>\",\n          \"isActive\": \"<boolean>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"hotelId\": \"<integer>\",\n          \"number\": \"<string>\",\n          \"typeRoom\": {\n            \"id\": \"<integer>\",\n            \"name\": \"<string>\",\n            \"numberOfGuests\": \"<integer>\"\n          },\n          \"baseCost\": \"<double>\",\n          \"taxes\": \"<double>\",\n          \"location\": \"<string>\",\n          \"isActive\": \"<boolean>\"\n        }\n      ],\n      \"infoGuests\": [\n        {\n          \"id\": \"<integer>\",\n          \"bookingID\": \"<integer>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"birthDate\": \"<dateTime>\",\n          \"gender\": \"<string>\",\n          \"documentType\": \"<string>\",\n          \"documentNumber\": \"<string>\",\n          \"email\": \"<string>\",\n          \"contactPhone\": \"<string>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"bookingID\": \"<integer>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"birthDate\": \"<dateTime>\",\n          \"gender\": \"<string>\",\n          \"documentType\": \"<string>\",\n          \"documentNumber\": \"<string>\",\n          \"email\": \"<string>\",\n          \"contactPhone\": \"<string>\"\n        }\n      ],\n      \"infoEmergencyContact\": {\n        \"id\": \"<integer>\",\n        \"bookingID\": \"<integer>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"contactPhone\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<integer>\",\n      \"checkInDate\": \"<dateTime>\",\n      \"checkOutDate\": \"<dateTime>\",\n      \"numberOfGuests\": \"<integer>\",\n      \"isActive\": \"<boolean>\",\n      \"infoHotel\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"address\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"country\": \"<string>\",\n        \"phone\": \"<string>\",\n        \"email\": \"<string>\",\n        \"isActive\": \"<boolean>\"\n      },\n      \"infoRoom\": [\n        {\n          \"id\": \"<integer>\",\n          \"hotelId\": \"<integer>\",\n          \"number\": \"<string>\",\n          \"typeRoom\": {\n            \"id\": \"<integer>\",\n            \"name\": \"<string>\",\n            \"numberOfGuests\": \"<integer>\"\n          },\n          \"baseCost\": \"<double>\",\n          \"taxes\": \"<double>\",\n          \"location\": \"<string>\",\n          \"isActive\": \"<boolean>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"hotelId\": \"<integer>\",\n          \"number\": \"<string>\",\n          \"typeRoom\": {\n            \"id\": \"<integer>\",\n            \"name\": \"<string>\",\n            \"numberOfGuests\": \"<integer>\"\n          },\n          \"baseCost\": \"<double>\",\n          \"taxes\": \"<double>\",\n          \"location\": \"<string>\",\n          \"isActive\": \"<boolean>\"\n        }\n      ],\n      \"infoGuests\": [\n        {\n          \"id\": \"<integer>\",\n          \"bookingID\": \"<integer>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"birthDate\": \"<dateTime>\",\n          \"gender\": \"<string>\",\n          \"documentType\": \"<string>\",\n          \"documentNumber\": \"<string>\",\n          \"email\": \"<string>\",\n          \"contactPhone\": \"<string>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"bookingID\": \"<integer>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"birthDate\": \"<dateTime>\",\n          \"gender\": \"<string>\",\n          \"documentType\": \"<string>\",\n          \"documentNumber\": \"<string>\",\n          \"email\": \"<string>\",\n          \"contactPhone\": \"<string>\"\n        }\n      ],\n      \"infoEmergencyContact\": {\n        \"id\": \"<integer>\",\n        \"bookingID\": \"<integer>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"contactPhone\": \"<string>\"\n      }\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Booking/GetAllBookingsQuery",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Booking",
+												"GetAllBookingsQuery"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GetByIdBookingsQuery",
+					"item": [
+						{
+							"name": "Retrieves a booking record by its identifier.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Booking/GetByIdBookingsQuery?Id=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Booking",
+										"GetByIdBookingsQuery"
+									],
+									"query": [
+										{
+											"key": "Id",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Booking/GetByIdBookingsQuery?Id=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Booking",
+												"GetByIdBookingsQuery"
+											],
+											"query": [
+												{
+													"key": "Id",
+													"value": "<integer>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"checkInDate\": \"<dateTime>\",\n      \"checkOutDate\": \"<dateTime>\",\n      \"numberOfGuests\": \"<integer>\",\n      \"isActive\": \"<boolean>\",\n      \"infoHotel\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"address\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"country\": \"<string>\",\n        \"phone\": \"<string>\",\n        \"email\": \"<string>\",\n        \"isActive\": \"<boolean>\"\n      },\n      \"infoRoom\": [\n        {\n          \"id\": \"<integer>\",\n          \"hotelId\": \"<integer>\",\n          \"number\": \"<string>\",\n          \"typeRoom\": {\n            \"id\": \"<integer>\",\n            \"name\": \"<string>\",\n            \"numberOfGuests\": \"<integer>\"\n          },\n          \"baseCost\": \"<double>\",\n          \"taxes\": \"<double>\",\n          \"location\": \"<string>\",\n          \"isActive\": \"<boolean>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"hotelId\": \"<integer>\",\n          \"number\": \"<string>\",\n          \"typeRoom\": {\n            \"id\": \"<integer>\",\n            \"name\": \"<string>\",\n            \"numberOfGuests\": \"<integer>\"\n          },\n          \"baseCost\": \"<double>\",\n          \"taxes\": \"<double>\",\n          \"location\": \"<string>\",\n          \"isActive\": \"<boolean>\"\n        }\n      ],\n      \"infoGuests\": [\n        {\n          \"id\": \"<integer>\",\n          \"bookingID\": \"<integer>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"birthDate\": \"<dateTime>\",\n          \"gender\": \"<string>\",\n          \"documentType\": \"<string>\",\n          \"documentNumber\": \"<string>\",\n          \"email\": \"<string>\",\n          \"contactPhone\": \"<string>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"bookingID\": \"<integer>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"birthDate\": \"<dateTime>\",\n          \"gender\": \"<string>\",\n          \"documentType\": \"<string>\",\n          \"documentNumber\": \"<string>\",\n          \"email\": \"<string>\",\n          \"contactPhone\": \"<string>\"\n        }\n      ],\n      \"infoEmergencyContact\": {\n        \"id\": \"<integer>\",\n        \"bookingID\": \"<integer>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"contactPhone\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<integer>\",\n      \"checkInDate\": \"<dateTime>\",\n      \"checkOutDate\": \"<dateTime>\",\n      \"numberOfGuests\": \"<integer>\",\n      \"isActive\": \"<boolean>\",\n      \"infoHotel\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"address\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"country\": \"<string>\",\n        \"phone\": \"<string>\",\n        \"email\": \"<string>\",\n        \"isActive\": \"<boolean>\"\n      },\n      \"infoRoom\": [\n        {\n          \"id\": \"<integer>\",\n          \"hotelId\": \"<integer>\",\n          \"number\": \"<string>\",\n          \"typeRoom\": {\n            \"id\": \"<integer>\",\n            \"name\": \"<string>\",\n            \"numberOfGuests\": \"<integer>\"\n          },\n          \"baseCost\": \"<double>\",\n          \"taxes\": \"<double>\",\n          \"location\": \"<string>\",\n          \"isActive\": \"<boolean>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"hotelId\": \"<integer>\",\n          \"number\": \"<string>\",\n          \"typeRoom\": {\n            \"id\": \"<integer>\",\n            \"name\": \"<string>\",\n            \"numberOfGuests\": \"<integer>\"\n          },\n          \"baseCost\": \"<double>\",\n          \"taxes\": \"<double>\",\n          \"location\": \"<string>\",\n          \"isActive\": \"<boolean>\"\n        }\n      ],\n      \"infoGuests\": [\n        {\n          \"id\": \"<integer>\",\n          \"bookingID\": \"<integer>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"birthDate\": \"<dateTime>\",\n          \"gender\": \"<string>\",\n          \"documentType\": \"<string>\",\n          \"documentNumber\": \"<string>\",\n          \"email\": \"<string>\",\n          \"contactPhone\": \"<string>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"bookingID\": \"<integer>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"birthDate\": \"<dateTime>\",\n          \"gender\": \"<string>\",\n          \"documentType\": \"<string>\",\n          \"documentNumber\": \"<string>\",\n          \"email\": \"<string>\",\n          \"contactPhone\": \"<string>\"\n        }\n      ],\n      \"infoEmergencyContact\": {\n        \"id\": \"<integer>\",\n        \"bookingID\": \"<integer>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"contactPhone\": \"<string>\"\n      }\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Booking/GetByIdBookingsQuery?Id=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Booking",
+												"GetByIdBookingsQuery"
+											],
+											"query": [
+												{
+													"key": "Id",
+													"value": "<integer>"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "CreateBookingCommand",
+					"item": [
+						{
+							"name": "Creates a new booking.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"checkIn\": \"<dateTime>\",\n  \"checkOut\": \"<dateTime>\",\n  \"numberGuests\": \"<integer>\",\n  \"rooms\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"guests\": [\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"birthDate\": \"<dateTime>\",\n      \"gender\": \"<string>\",\n      \"documentType\": \"<string>\",\n      \"documentNumber\": \"<string>\",\n      \"email\": \"<string>\",\n      \"contactPhone\": \"<string>\"\n    },\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"birthDate\": \"<dateTime>\",\n      \"gender\": \"<string>\",\n      \"documentType\": \"<string>\",\n      \"documentNumber\": \"<string>\",\n      \"email\": \"<string>\",\n      \"contactPhone\": \"<string>\"\n    }\n  ],\n  \"emergencyContact\": {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"contactPhone\": \"<string>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Booking/CreateBookingCommand",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Booking",
+										"CreateBookingCommand"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"checkIn\": \"<dateTime>\",\n  \"checkOut\": \"<dateTime>\",\n  \"numberGuests\": \"<integer>\",\n  \"rooms\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"guests\": [\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"birthDate\": \"<dateTime>\",\n      \"gender\": \"<string>\",\n      \"documentType\": \"<string>\",\n      \"documentNumber\": \"<string>\",\n      \"email\": \"<string>\",\n      \"contactPhone\": \"<string>\"\n    },\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"birthDate\": \"<dateTime>\",\n      \"gender\": \"<string>\",\n      \"documentType\": \"<string>\",\n      \"documentNumber\": \"<string>\",\n      \"email\": \"<string>\",\n      \"contactPhone\": \"<string>\"\n    }\n  ],\n  \"emergencyContact\": {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"contactPhone\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Booking/CreateBookingCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Booking",
+												"CreateBookingCommand"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"checkInDate\": \"<dateTime>\",\n      \"checkOutDate\": \"<dateTime>\",\n      \"numberOfGuests\": \"<integer>\",\n      \"isActive\": \"<boolean>\",\n      \"infoHotel\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"address\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"country\": \"<string>\",\n        \"phone\": \"<string>\",\n        \"email\": \"<string>\",\n        \"isActive\": \"<boolean>\"\n      },\n      \"infoRoom\": [\n        {\n          \"id\": \"<integer>\",\n          \"hotelId\": \"<integer>\",\n          \"number\": \"<string>\",\n          \"typeRoom\": {\n            \"id\": \"<integer>\",\n            \"name\": \"<string>\",\n            \"numberOfGuests\": \"<integer>\"\n          },\n          \"baseCost\": \"<double>\",\n          \"taxes\": \"<double>\",\n          \"location\": \"<string>\",\n          \"isActive\": \"<boolean>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"hotelId\": \"<integer>\",\n          \"number\": \"<string>\",\n          \"typeRoom\": {\n            \"id\": \"<integer>\",\n            \"name\": \"<string>\",\n            \"numberOfGuests\": \"<integer>\"\n          },\n          \"baseCost\": \"<double>\",\n          \"taxes\": \"<double>\",\n          \"location\": \"<string>\",\n          \"isActive\": \"<boolean>\"\n        }\n      ],\n      \"infoGuests\": [\n        {\n          \"id\": \"<integer>\",\n          \"bookingID\": \"<integer>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"birthDate\": \"<dateTime>\",\n          \"gender\": \"<string>\",\n          \"documentType\": \"<string>\",\n          \"documentNumber\": \"<string>\",\n          \"email\": \"<string>\",\n          \"contactPhone\": \"<string>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"bookingID\": \"<integer>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"birthDate\": \"<dateTime>\",\n          \"gender\": \"<string>\",\n          \"documentType\": \"<string>\",\n          \"documentNumber\": \"<string>\",\n          \"email\": \"<string>\",\n          \"contactPhone\": \"<string>\"\n        }\n      ],\n      \"infoEmergencyContact\": {\n        \"id\": \"<integer>\",\n        \"bookingID\": \"<integer>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"contactPhone\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<integer>\",\n      \"checkInDate\": \"<dateTime>\",\n      \"checkOutDate\": \"<dateTime>\",\n      \"numberOfGuests\": \"<integer>\",\n      \"isActive\": \"<boolean>\",\n      \"infoHotel\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"address\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"country\": \"<string>\",\n        \"phone\": \"<string>\",\n        \"email\": \"<string>\",\n        \"isActive\": \"<boolean>\"\n      },\n      \"infoRoom\": [\n        {\n          \"id\": \"<integer>\",\n          \"hotelId\": \"<integer>\",\n          \"number\": \"<string>\",\n          \"typeRoom\": {\n            \"id\": \"<integer>\",\n            \"name\": \"<string>\",\n            \"numberOfGuests\": \"<integer>\"\n          },\n          \"baseCost\": \"<double>\",\n          \"taxes\": \"<double>\",\n          \"location\": \"<string>\",\n          \"isActive\": \"<boolean>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"hotelId\": \"<integer>\",\n          \"number\": \"<string>\",\n          \"typeRoom\": {\n            \"id\": \"<integer>\",\n            \"name\": \"<string>\",\n            \"numberOfGuests\": \"<integer>\"\n          },\n          \"baseCost\": \"<double>\",\n          \"taxes\": \"<double>\",\n          \"location\": \"<string>\",\n          \"isActive\": \"<boolean>\"\n        }\n      ],\n      \"infoGuests\": [\n        {\n          \"id\": \"<integer>\",\n          \"bookingID\": \"<integer>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"birthDate\": \"<dateTime>\",\n          \"gender\": \"<string>\",\n          \"documentType\": \"<string>\",\n          \"documentNumber\": \"<string>\",\n          \"email\": \"<string>\",\n          \"contactPhone\": \"<string>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"bookingID\": \"<integer>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"birthDate\": \"<dateTime>\",\n          \"gender\": \"<string>\",\n          \"documentType\": \"<string>\",\n          \"documentNumber\": \"<string>\",\n          \"email\": \"<string>\",\n          \"contactPhone\": \"<string>\"\n        }\n      ],\n      \"infoEmergencyContact\": {\n        \"id\": \"<integer>\",\n        \"bookingID\": \"<integer>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"contactPhone\": \"<string>\"\n      }\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"checkIn\": \"<dateTime>\",\n  \"checkOut\": \"<dateTime>\",\n  \"numberGuests\": \"<integer>\",\n  \"rooms\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"guests\": [\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"birthDate\": \"<dateTime>\",\n      \"gender\": \"<string>\",\n      \"documentType\": \"<string>\",\n      \"documentNumber\": \"<string>\",\n      \"email\": \"<string>\",\n      \"contactPhone\": \"<string>\"\n    },\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"birthDate\": \"<dateTime>\",\n      \"gender\": \"<string>\",\n      \"documentType\": \"<string>\",\n      \"documentNumber\": \"<string>\",\n      \"email\": \"<string>\",\n      \"contactPhone\": \"<string>\"\n    }\n  ],\n  \"emergencyContact\": {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"contactPhone\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Booking/CreateBookingCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Booking",
+												"CreateBookingCommand"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Guest",
+			"item": [
+				{
+					"name": "GetAllGuestsQuery",
+					"item": [
+						{
+							"name": "Retrieves a list of all guests.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Guest/GetAllGuestsQuery",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Guest",
+										"GetAllGuestsQuery"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Guest/GetAllGuestsQuery",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Guest",
+												"GetAllGuestsQuery"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"bookingID\": \"<integer>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"birthDate\": \"<dateTime>\",\n      \"gender\": \"<string>\",\n      \"documentType\": \"<string>\",\n      \"documentNumber\": \"<string>\",\n      \"email\": \"<string>\",\n      \"contactPhone\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"bookingID\": \"<integer>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"birthDate\": \"<dateTime>\",\n      \"gender\": \"<string>\",\n      \"documentType\": \"<string>\",\n      \"documentNumber\": \"<string>\",\n      \"email\": \"<string>\",\n      \"contactPhone\": \"<string>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Guest/GetAllGuestsQuery",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Guest",
+												"GetAllGuestsQuery"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Hotel",
+			"item": [
+				{
+					"name": "GetAllHotelsQuery",
+					"item": [
+						{
+							"name": "Retrieves a list of all hotels.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Hotel/GetAllHotelsQuery",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Hotel",
+										"GetAllHotelsQuery"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Hotel/GetAllHotelsQuery",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Hotel",
+												"GetAllHotelsQuery"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"country\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"email\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"country\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"email\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Hotel/GetAllHotelsQuery",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Hotel",
+												"GetAllHotelsQuery"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GetByIdHotelQuery",
+					"item": [
+						{
+							"name": "Retrieves the details of a hotel by its identifier.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Hotel/GetByIdHotelQuery?Id=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Hotel",
+										"GetByIdHotelQuery"
+									],
+									"query": [
+										{
+											"key": "Id",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Hotel/GetByIdHotelQuery?Id=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Hotel",
+												"GetByIdHotelQuery"
+											],
+											"query": [
+												{
+													"key": "Id",
+													"value": "<integer>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"country\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"email\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"country\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"email\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Hotel/GetByIdHotelQuery?Id=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Hotel",
+												"GetByIdHotelQuery"
+											],
+											"query": [
+												{
+													"key": "Id",
+													"value": "<integer>"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "CreateHotelCommand",
+					"item": [
+						{
+							"name": "Creates a new hotel record.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"country\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Hotel/CreateHotelCommand",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Hotel",
+										"CreateHotelCommand"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"country\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Hotel/CreateHotelCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Hotel",
+												"CreateHotelCommand"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\",\n  \"result\": \"<boolean>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"country\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Hotel/CreateHotelCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Hotel",
+												"CreateHotelCommand"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "UpdateHotelCommand",
+					"item": [
+						{
+							"name": "Updates the details of an existing hotel.",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"country\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Hotel/UpdateHotelCommand",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Hotel",
+										"UpdateHotelCommand"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"country\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Hotel/UpdateHotelCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Hotel",
+												"UpdateHotelCommand"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"country\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"email\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"country\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"email\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"country\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Hotel/UpdateHotelCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Hotel",
+												"UpdateHotelCommand"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "UpdateStateHotelCommand",
+					"item": [
+						{
+							"name": "Updates the state of an existing hotel.",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<integer>\",\n  \"isActive\": \"<boolean>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Hotel/UpdateStateHotelCommand",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Hotel",
+										"UpdateStateHotelCommand"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\",\n  \"isActive\": \"<boolean>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Hotel/UpdateStateHotelCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Hotel",
+												"UpdateStateHotelCommand"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"country\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"email\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"country\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"email\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\",\n  \"isActive\": \"<boolean>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Hotel/UpdateStateHotelCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Hotel",
+												"UpdateStateHotelCommand"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "GetAllQuery",
+					"item": [
+						{
+							"name": "Retrieves all room records.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Room/GetAllQuery",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Room",
+										"GetAllQuery"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Room/GetAllQuery",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Room",
+												"GetAllQuery"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"hotelId\": \"<integer>\",\n      \"number\": \"<string>\",\n      \"typeRoom\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"numberOfGuests\": \"<integer>\"\n      },\n      \"baseCost\": \"<double>\",\n      \"taxes\": \"<double>\",\n      \"location\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"hotelId\": \"<integer>\",\n      \"number\": \"<string>\",\n      \"typeRoom\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"numberOfGuests\": \"<integer>\"\n      },\n      \"baseCost\": \"<double>\",\n      \"taxes\": \"<double>\",\n      \"location\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Room/GetAllQuery",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Room",
+												"GetAllQuery"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GetAllTypeRooms",
+					"item": [
+						{
+							"name": "Retrieves all types of rooms available.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Room/GetAllTypeRooms",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Room",
+										"GetAllTypeRooms"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Room/GetAllTypeRooms",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Room",
+												"GetAllTypeRooms"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"numberOfGuests\": \"<integer>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"numberOfGuests\": \"<integer>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Room/GetAllTypeRooms",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Room",
+												"GetAllTypeRooms"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GetByIdQuery",
+					"item": [
+						{
+							"name": "Retrieves details of a room by its identifier.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Room/GetByIdQuery?RoomId=<integer>&HotelId=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Room",
+										"GetByIdQuery"
+									],
+									"query": [
+										{
+											"key": "RoomId",
+											"value": "<integer>"
+										},
+										{
+											"key": "HotelId",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Room/GetByIdQuery?RoomId=<integer>&HotelId=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Room",
+												"GetByIdQuery"
+											],
+											"query": [
+												{
+													"key": "RoomId",
+													"value": "<integer>"
+												},
+												{
+													"key": "HotelId",
+													"value": "<integer>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"hotelId\": \"<integer>\",\n      \"number\": \"<string>\",\n      \"typeRoom\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"numberOfGuests\": \"<integer>\"\n      },\n      \"baseCost\": \"<double>\",\n      \"taxes\": \"<double>\",\n      \"location\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"hotelId\": \"<integer>\",\n      \"number\": \"<string>\",\n      \"typeRoom\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"numberOfGuests\": \"<integer>\"\n      },\n      \"baseCost\": \"<double>\",\n      \"taxes\": \"<double>\",\n      \"location\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Room/GetByIdQuery?RoomId=<integer>&HotelId=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Room",
+												"GetByIdQuery"
+											],
+											"query": [
+												{
+													"key": "RoomId",
+													"value": "<integer>"
+												},
+												{
+													"key": "HotelId",
+													"value": "<integer>"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "FindRoomsByFilterQuery",
+					"item": [
+						{
+							"name": "Finds rooms that match specific filter criteria.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Room/FindRoomsByFilterQuery?City=<string>&CheckIn=<dateTime>&CheckOut=<dateTime>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Room",
+										"FindRoomsByFilterQuery"
+									],
+									"query": [
+										{
+											"key": "City",
+											"value": "<string>"
+										},
+										{
+											"key": "CheckIn",
+											"value": "<dateTime>"
+										},
+										{
+											"key": "CheckOut",
+											"value": "<dateTime>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Room/FindRoomsByFilterQuery?City=<string>&CheckIn=<dateTime>&CheckOut=<dateTime>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Room",
+												"FindRoomsByFilterQuery"
+											],
+											"query": [
+												{
+													"key": "City",
+													"value": "<string>"
+												},
+												{
+													"key": "CheckIn",
+													"value": "<dateTime>"
+												},
+												{
+													"key": "CheckOut",
+													"value": "<dateTime>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"hotelId\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"address\": \"<string>\",\n      \"country\": \"<string>\",\n      \"state\": \"<string>\",\n      \"city\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"email\": \"<string>\",\n      \"roomId\": \"<integer>\",\n      \"number\": \"<string>\",\n      \"typeRoom\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"numberOfGuests\": \"<integer>\"\n      },\n      \"baseCost\": \"<double>\",\n      \"taxes\": \"<double>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"hotelId\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"address\": \"<string>\",\n      \"country\": \"<string>\",\n      \"state\": \"<string>\",\n      \"city\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"email\": \"<string>\",\n      \"roomId\": \"<integer>\",\n      \"number\": \"<string>\",\n      \"typeRoom\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"numberOfGuests\": \"<integer>\"\n      },\n      \"baseCost\": \"<double>\",\n      \"taxes\": \"<double>\",\n      \"location\": \"<string>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Room/FindRoomsByFilterQuery?City=<string>&CheckIn=<dateTime>&CheckOut=<dateTime>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Room",
+												"FindRoomsByFilterQuery"
+											],
+											"query": [
+												{
+													"key": "City",
+													"value": "<string>"
+												},
+												{
+													"key": "CheckIn",
+													"value": "<dateTime>"
+												},
+												{
+													"key": "CheckOut",
+													"value": "<dateTime>"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "CreateRoomCommand",
+					"item": [
+						{
+							"name": "Creates a new room record.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"hotelId\": \"<integer>\",\n  \"number\": \"<string>\",\n  \"type\": \"<integer>\",\n  \"baseCost\": \"<double>\",\n  \"taxes\": \"<double>\",\n  \"location\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Room/CreateRoomCommand",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Room",
+										"CreateRoomCommand"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"hotelId\": \"<integer>\",\n  \"number\": \"<string>\",\n  \"type\": \"<integer>\",\n  \"baseCost\": \"<double>\",\n  \"taxes\": \"<double>\",\n  \"location\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Room/CreateRoomCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Room",
+												"CreateRoomCommand"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"hotelId\": \"<integer>\",\n      \"number\": \"<string>\",\n      \"typeRoom\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"numberOfGuests\": \"<integer>\"\n      },\n      \"baseCost\": \"<double>\",\n      \"taxes\": \"<double>\",\n      \"location\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"hotelId\": \"<integer>\",\n      \"number\": \"<string>\",\n      \"typeRoom\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"numberOfGuests\": \"<integer>\"\n      },\n      \"baseCost\": \"<double>\",\n      \"taxes\": \"<double>\",\n      \"location\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"hotelId\": \"<integer>\",\n  \"number\": \"<string>\",\n  \"type\": \"<integer>\",\n  \"baseCost\": \"<double>\",\n  \"taxes\": \"<double>\",\n  \"location\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Room/CreateRoomCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Room",
+												"CreateRoomCommand"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "UpdateRoomCommand",
+					"item": [
+						{
+							"name": "Updates an existing room record.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<integer>\",\n  \"hotelId\": \"<integer>\",\n  \"number\": \"<string>\",\n  \"type\": \"<integer>\",\n  \"baseCost\": \"<double>\",\n  \"taxes\": \"<double>\",\n  \"location\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Room/UpdateRoomCommand",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Room",
+										"UpdateRoomCommand"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\",\n  \"hotelId\": \"<integer>\",\n  \"number\": \"<string>\",\n  \"type\": \"<integer>\",\n  \"baseCost\": \"<double>\",\n  \"taxes\": \"<double>\",\n  \"location\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Room/UpdateRoomCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Room",
+												"UpdateRoomCommand"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"hotelId\": \"<integer>\",\n      \"number\": \"<string>\",\n      \"typeRoom\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"numberOfGuests\": \"<integer>\"\n      },\n      \"baseCost\": \"<double>\",\n      \"taxes\": \"<double>\",\n      \"location\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"hotelId\": \"<integer>\",\n      \"number\": \"<string>\",\n      \"typeRoom\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"numberOfGuests\": \"<integer>\"\n      },\n      \"baseCost\": \"<double>\",\n      \"taxes\": \"<double>\",\n      \"location\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\",\n  \"hotelId\": \"<integer>\",\n  \"number\": \"<string>\",\n  \"type\": \"<integer>\",\n  \"baseCost\": \"<double>\",\n  \"taxes\": \"<double>\",\n  \"location\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Room/UpdateRoomCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Room",
+												"UpdateRoomCommand"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "UpdateStateRoomCommand",
+					"item": [
+						{
+							"name": "Updates the state of an existing room.",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<integer>\",\n  \"hotelId\": \"<integer>\",\n  \"isActive\": \"<boolean>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Room/UpdateStateRoomCommand",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Room",
+										"UpdateStateRoomCommand"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\",\n  \"hotelId\": \"<integer>\",\n  \"isActive\": \"<boolean>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Room/UpdateStateRoomCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Room",
+												"UpdateStateRoomCommand"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"hotelId\": \"<integer>\",\n      \"number\": \"<string>\",\n      \"typeRoom\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"numberOfGuests\": \"<integer>\"\n      },\n      \"baseCost\": \"<double>\",\n      \"taxes\": \"<double>\",\n      \"location\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"hotelId\": \"<integer>\",\n      \"number\": \"<string>\",\n      \"typeRoom\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"numberOfGuests\": \"<integer>\"\n      },\n      \"baseCost\": \"<double>\",\n      \"taxes\": \"<double>\",\n      \"location\": \"<string>\",\n      \"isActive\": \"<boolean>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\",\n  \"hotelId\": \"<integer>\",\n  \"isActive\": \"<boolean>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Room/UpdateStateRoomCommand",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Room",
+												"UpdateStateRoomCommand"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.sendRequest({\r",
+					"    url: pm.collectionVariables.get(\"baseUrl\") + `/AuthLogin/LoginQuery?UserName=${pm.collectionVariables.get(\"user\")}&Password=${pm.collectionVariables.get(\"pass\")}`,\r",
+					"    method: 'get'\r",
+					"}, function (err, res) {\r",
+					"    // Verifica si la solicitud fue exitosa\r",
+					"    if (res.code === 200) {\r",
+					"        // Convierte el Buffer a una cadena de texto\r",
+					"        var responseBody = res.stream.toString('utf8');\r",
+					"\r",
+					"        // Imprime el cuerpo de la respuesta\r",
+					"        console.log(responseBody);\r",
+					"\r",
+					"        // Intenta analizar la respuesta como JSON\r",
+					"        try {\r",
+					"            var jsonData = JSON.parse(responseBody);\r",
+					"            console.log(jsonData);\r",
+					"            pm.collectionVariables.set('bearerToken', jsonData.token);\r",
+					"        } catch (jsonError) {\r",
+					"            console.log('Error al analizar la respuesta JSON:', jsonError);\r",
+					"        }\r",
+					"    } else {\r",
+					"        // Maneja errores según sea necesario\r",
+					"        console.log('Error al obtener el token. Código:', res.code, 'Cuerpo:', res.body);\r",
+					"    }\r",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://localhost:7281"
+		},
+		{
+			"key": "bearerToken",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "user",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "pass",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
